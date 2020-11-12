@@ -15,9 +15,15 @@ class Main extends Component {
                                 "For identical twins. Your ability to tear them apart is incredible."],
                         stage: "start" , // start, main, end
                         qStage: 1,
-                        Answers: {1: "A", 2 : "A", 3 : "A", 4 : "M", 5: "A", 6: "A", 7: "A", 8: "A", 9: "M", 10: "A", 11: "M", 12: "M", 13: "M", 14: "M", 15: "M",
-                                   16: "M", 17: "M", 18: "A", 19: "M", 20: "A", 21: "M", 22: "A", 23: "M", 24: "M", 25: "A", 26: "M", 27: "A", 28: "A", 29: "M", 30: "M", 
-                                   31: "M", 32: "A", 33: "A", 34: "A", 35: "A", 36: "M",},
+                        Answers: {1: "A",  2: "A",  3: "A",  4: "A",  5: "A", 
+                                  6: "M",  7: "M",  8: "A",  9: "A",  10: "A",  
+                                  11: "M",  12: "M",  13: "A",  14: "M",  15: "A",  
+                                  16: "M",  17: "M",  18: "M",  19: "M",  20: "A",  
+                                  21: "M",  22: "A",  23: "M",  24: "M",  25: "M",  
+                                  26: "M",  27: "A",  28: "A",  29: "M",  30: "A",  
+                                  31: "M",  32: "M",  33: "A",  34: "M",  35: "A",  
+                                  36: "A",  37: "A",  
+                    },
                         correctScore: 0,
                         wrongScore: 0};
         this.AlanClick=this.AlanClick.bind(this);
@@ -28,7 +34,8 @@ class Main extends Component {
     AlanClick() {
         this.state.Answers[this.state.qStage] == "A" ? this.setState({correctScore: this.state.correctScore + 1}): this.setState({wrongScore: this.state.wrongScore + 1}) ;
         this.setState({qStage: this.state.qStage + 1}); 
-        if(this.state.qStage == 10){
+        console.log(this.state.Answers)
+        if(this.state.qStage == 37){
             this.setState({stage: "end"})
         };
     }
@@ -59,7 +66,7 @@ class Main extends Component {
                 </div>)
              } else if (this.state.stage=="end"){       
                 return(<div>
-                    <h3>And there you have it. I</h3>
+                    <h3>Great job. I guess you do see see Al and Mike as seperate beings</h3>
                 </div>)                  
             } else{
                 return (
