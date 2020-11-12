@@ -56,7 +56,7 @@ img {
   filter: blur(1px);
 }
 .blur2 {
-  filter: blur(1px);
+  filter: blur(5px);
 }
 .blur3 {
   filter: blur(1px);

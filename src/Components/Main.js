@@ -66,7 +66,7 @@ class Main extends Component {
                 </div>)
              } else if (this.state.stage=="end"){       
                 return(<div>
-                    <h3>Great job. I guess you do see see Al and Mike as seperate beings</h3>
+                    <h3>Congratulations. Your ability to tell <i>identical</i> twins apart is incredible."</h3>
                 </div>)                  
             } else{
                 return (
