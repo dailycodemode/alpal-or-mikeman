@@ -20,9 +20,7 @@ class Main extends Component {
                                   11: "M",  12: "M",  13: "A",  14: "M",  15: "A",  
                                   16: "M",  17: "M",  18: "M",  19: "M",  20: "A",  
                                   21: "M",  22: "A",  23: "M",  24: "M",  25: "M",  
-                                  26: "M",  27: "A",  28: "A",  29: "M",  30: "A",  
-                                  31: "M",  32: "M",  33: "A",  34: "M",  35: "A",  
-                                  36: "A",  37: "A",  
+                                  26: "M",  27: "A",  28: "A",  29: "M",  30: "A"
                     },
                         correctScore: 0,
                         wrongScore: 0};
@@ -35,7 +33,7 @@ class Main extends Component {
         this.state.Answers[this.state.qStage] == "A" ? this.setState({correctScore: this.state.correctScore + 1}): this.setState({wrongScore: this.state.wrongScore + 1}) ;
         this.setState({qStage: this.state.qStage + 1}); 
         
-        if(this.state.qStage == 37){
+        if(this.state.qStage == 30){
             this.setState({stage: "end"})
         }else if (this.state.qStage == 16){
             this.setState({stage: "mid1"})
@@ -44,7 +42,7 @@ class Main extends Component {
     MikeClick() {
         this.state.Answers[this.state.qStage] == "M" ? this.setState({correctScore: this.state.correctScore + 1}): this.setState({wrongScore: this.state.wrongScore + 1}) ;
         this.setState({qStage: this.state.qStage + 1}); 
-        if(this.state.qStage == 37){
+        if(this.state.qStage == 30){
             this.setState({stage: "end"})
         }else if (this.state.qStage == 16){
             this.setState({stage: "mid1"})
@@ -72,9 +70,29 @@ class Main extends Component {
                     <button className="myButton" onClick={this.startGame}>Begin</button>    
                 </div>)
              } else if (this.state.stage=="end"){   
+                let result = this.state.correctScore / (this.state.correctScore + this.state.wrongScore);
+                console.log(Number(result));
+                let finalResult;
 
-                return(<div>
-                    <h3>Congratulations. Your ability to tell <i>identical</i> twins apart is impressive.</h3>
+                if (result > .95) {
+                    finalResult = "concerning"
+                } else if (result > .90) {
+                    finalResult = "around the same as Mary Cusack's"
+                } else if (result > .80) {
+                    finalResult = "not too shabby"
+                } else if (result > .70) {
+                    finalResult = "alright"
+                } else if (result > .60) {
+                    finalResult = "nothing to brag about"
+                } else if (result > .50) {
+                    finalResult = "non existant"
+                } else {
+                    finalResult = "utterly hopeless"
+                }
+                return(
+                <div>
+                    <h3>Congratulations. Your ability to tell <i>identical</i> twins apart is ...</h3>
+                    <h3>{finalResult}</h3>
                 </div>)                  
             } else if (this.state.stage="mid1"){
                 return(<div>

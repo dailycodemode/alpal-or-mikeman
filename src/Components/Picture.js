@@ -30,13 +30,6 @@ import _27A from "../Pics/27A.jpg";
 import _28A from "../Pics/28A.jpg";
 import _29M from "../Pics/29M.jpg";
 import _30A from "../Pics/30A.jpg";
-import _31M from "../Pics/31M.jpg";
-import _32M from "../Pics/32M.jpg";
-import _33A from "../Pics/33A.jpg";
-import _34M from "../Pics/34M.jpg";
-import _35A from "../Pics/35A.jpg";
-import _37A from "../Pics/37A.jpg";
-import _40A from "../Pics/40A.jpg";
 
 
 const Picture = ({qStage}) => {
@@ -45,9 +38,7 @@ const Picture = ({qStage}) => {
                                     11: _11M,  12: _12M,  13: _13A,  14: _14M,  15: _15A,  
                                     16: _16M,  17: _17M,  18: _18M,  19: _19M,  20: _20A,  
                                     21: _21M,  22: _22A,  23: _23M,  24: _24M,  25: _25M,  
-                                    26: _26M,  27: _27A,  28: _28A,  29: _29M,  30: _30A,  
-                                    31: _31M,  32: _32M,  33: _33A,  34: _34M,  35: _35A,  
-                                    36: _37A,  37: _40A,  
+                                    26: _26M,  27: _27A,  28: _28A,  29: _29M,  30: _30A
 
     });
     // var qStage;
