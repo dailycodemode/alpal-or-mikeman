@@ -98,7 +98,7 @@ class Main extends Component {
                 return(<div>
                     <h4>Not bad. Not too bad at all. Maybe Mike and Al are different people???</h4>
                     <br/>
-                    <span><h4>I once saw them in the same place, at the same time.... or was that Cooldude85 and Afro?</h4></span>
+                    <span><h4>I once saw them in the same place, at the same time.... or was that Jamie and Tom?</h4></span>
                     <br/>
                     <h5>Now lets take off your glasses.</h5>
                     <button className="myButton" onClick={this.startGame}>It's all a bit of a blur</button>  
