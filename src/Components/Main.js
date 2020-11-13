@@ -13,7 +13,7 @@ class Main extends Component {
                          mikeSentences: [
                                 "You’re a Mike Man. No doubt about it.",
                                 "For identical twins. Your ability to tear them apart is incredible."],
-                        stage: "start" , // start, main, end
+                        stage: "start" , // start, main, end, mid1
                         qStage: 1,
                         Answers: {1: "A",  2: "A",  3: "A",  4: "A",  5: "A", 
                                   6: "M",  7: "M",  8: "A",  9: "A",  10: "A",  
@@ -34,18 +34,25 @@ class Main extends Component {
     AlanClick() {
         this.state.Answers[this.state.qStage] == "A" ? this.setState({correctScore: this.state.correctScore + 1}): this.setState({wrongScore: this.state.wrongScore + 1}) ;
         this.setState({qStage: this.state.qStage + 1}); 
-        console.log(this.state.Answers)
+        
         if(this.state.qStage == 37){
             this.setState({stage: "end"})
+        }else if (this.state.qStage == 16){
+            this.setState({stage: "mid1"})
         };
     }
     MikeClick() {
         this.state.Answers[this.state.qStage] == "M" ? this.setState({correctScore: this.state.correctScore + 1}): this.setState({wrongScore: this.state.wrongScore + 1}) ;
         this.setState({qStage: this.state.qStage + 1}); 
+        if(this.state.qStage == 37){
+            this.setState({stage: "end"})
+        }else if (this.state.qStage == 16){
+            this.setState({stage: "mid1"})
+        };
     }    
     startGame(){
         this.setState({stage: "main"});  
-    }
+    } 
     render() {
 
         const renderImg = ()=>{
@@ -64,11 +71,28 @@ class Main extends Component {
                     <h3>We all know Alan and Michael but do you know your Michaels from your Alans</h3>
                     <button className="myButton" onClick={this.startGame}>Begin</button>    
                 </div>)
-             } else if (this.state.stage=="end"){       
+             } else if (this.state.stage=="end"){   
+
                 return(<div>
-                    <h3>Congratulations. Your ability to tell <i>identical</i> twins apart is incredible."</h3>
+                    <h3>Congratulations. Your ability to tell <i>identical</i> twins apart is impressive.</h3>
                 </div>)                  
-            } else{
+            } else if (this.state.stage="mid1"){
+                return(<div>
+                    <h4>Not bad. Not too bad at all. Maybe Mike and Al are different people???</h4>
+                    <br/>
+                    <span><h4>I once saw them in the same place, at the same time.... or was that Cooldude85 and Afro?</h4></span>
+                    <br/>
+                    <h5>Now lets take off your glasses.</h5>
+                    <button className="myButton" onClick={this.startGame}>It's all a bit of a blur</button>  
+                </div>)                
+            } else if (this.state.stage="mid2"){
+                return(<div>
+                    <h3>Is that you Mike??? Or is that you Al??? I can't tell anymore</h3>
+                    <button className="myButton" onClick={this.startGame}>Continue</button>  
+                </div>)                
+            }
+            
+            else{
                 return (
                     <div>
                         <h4>Check code</h4>

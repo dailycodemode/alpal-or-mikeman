@@ -54,7 +54,7 @@ const Picture = ({qStage}) => {
     return (
         <div className="">
             {/* <p>{qStage}</p>  filter: blur(4px); */}
-            <img  className = {qStage > 20? "img blur2" : "img "}  alt="cusack" src={pic[qStage]} style={{ blur: 20 }}  />
+            <img  className = {qStage > 16? "img blur2" : "img "}  alt="cusack" src={pic[qStage]} style={{ blur: 20 }}  />
 
         </div>
     );
